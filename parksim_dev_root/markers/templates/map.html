@@ -1,0 +1,22 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Markers Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'map.css' %}">
+
+    <!-- Leaflet assets -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet-src.js" integrity="sha512-IkGU/uDhB9u9F8k+2OsA6XXoowIhOuQL1NTgNZHY1nkURnqEGlDZq3GsfmdJdKFe1k1zOc6YU2K7qY+hF9AodA==" crossorigin=""></script>
+
+    <!-- Leaflet.AwesomeNumberMarkers assets -->
+    <link rel="stylesheet" href="https://rawgit.com/Zahidul-Islam/Leaflet.awesome-numbered-marker/f7b5b594e9fc451cd006ee345220a86390eb1cf1/src/leaflet_awesome_number_markers.css" />
+    <script src="https://rawgit.com/Zahidul-Islam/Leaflet.awesome-numbered-marker/f7b5b594e9fc451cd006ee345220a86390eb1cf1/src/leaflet_awesome_number_markers.js"></script>
+</head>
+<body>
+  {{ markers|json_script:"markers-data" }}
+  <div id="map"></div>
+  <script src="{% static 'map.js' %}"></script>
+</body>
+</html>
